@@ -1,0 +1,167 @@
+[gd_scene load_steps=11 format=3 uid="uid://hhddolawglrm"]
+
+[ext_resource type="FontFile" uid="uid://do7mkrl08rpkc" path="res://★ Files ★/★ Fonts ★/dogicabold.ttf" id="1_u3kq2"]
+[ext_resource type="Script" uid="uid://d1crh7ui475to" path="res://★ Scripts ★/Notes.gd" id="2_p6d2l"]
+[ext_resource type="FontFile" uid="uid://cu3ebes5jtte8" path="res://★ Files ★/★ Fonts ★/easvhs.ttf" id="3_f1cr5"]
+[ext_resource type="FontFile" uid="uid://c63qjbir01v2f" path="res://★ Files ★/★ Fonts ★/IBMPlexMono-Regular.ttf" id="4_o6wu8"]
+
+[sub_resource type="Theme" id="Theme_srjdr"]
+default_font = ExtResource("1_u3kq2")
+default_font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifklg"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vd1n"]
+bg_color = Color(0.03653482, 0.036552005, 0.007637347, 1)
+
+[sub_resource type="Theme" id="Theme_4vd1n"]
+default_font = ExtResource("3_f1cr5")
+default_font_size = 17
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygqcu"]
+bg_color = Color(0.05882353, 0.21960784, 0.05882353, 1)
+
+[sub_resource type="Theme" id="Theme_cv8km"]
+default_font = ExtResource("4_o6wu8")
+default_font_size = 15
+/fonts/jjj = ExtResource("4_o6wu8")
+
+[node name="Notes" type="Window"]
+oversampling_override = 1.0
+title = "NOTES"
+initial_position = 1
+size = Vector2i(430, 230)
+theme = SubResource("Theme_srjdr")
+theme_override_styles/embedded_border = SubResource("StyleBoxFlat_ifklg")
+script = ExtResource("2_p6d2l")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_4vd1n")
+
+[node name="Bar" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Bar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EMPTY1" type="Label" parent="Panel/Bar/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_4vd1n")
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button1" type="Button" parent="Panel/Bar/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_f1cr5")
+theme_override_font_sizes/font_size = 17
+text = "hi??"
+alignment = 0
+
+[node name="Button2" type="Button" parent="Panel/Bar/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_f1cr5")
+theme_override_font_sizes/font_size = 17
+text = "note #2"
+alignment = 0
+
+[node name="Button3" type="Button" parent="Panel/Bar/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_f1cr5")
+theme_override_font_sizes/font_size = 17
+text = "hi??"
+alignment = 0
+
+[node name="Button4" type="Button" parent="Panel/Bar/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_f1cr5")
+theme_override_font_sizes/font_size = 17
+text = "hi??"
+alignment = 0
+
+[node name="Button5" type="Button" parent="Panel/Bar/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_f1cr5")
+theme_override_font_sizes/font_size = 17
+text = "hi??"
+alignment = 0
+
+[node name="Button6" type="Button" parent="Panel/Bar/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_f1cr5")
+theme_override_font_sizes/font_size = 17
+text = "hi??"
+alignment = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/Bar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="Panel/Bar/VBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_4vd1n")
+theme_override_colors/font_color = Color(0.60784316, 0.7372549, 0.05882353, 1)
+text = "
+title          "
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Panel" type="Panel" parent="Panel/Bar/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ygqcu")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Panel/Bar/VBoxContainer2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Date" type="Label" parent="Panel/Bar/VBoxContainer2/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.60784316, 0.7372549, 0.05882353, 1)
+theme_override_font_sizes/font_size = 13
+text = "date   "
+horizontal_alignment = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/Bar/VBoxContainer2/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/Bar/VBoxContainer2/Panel/HBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_cv8km")
+bbcode_enabled = true
+text = "jbjhbnjn
+j"
+fit_content = true
+scroll_active = false
+
+[connection signal="pressed" from="Panel/Bar/VBoxContainer/Button1" to="." method="_on_button1_pressed"]
+[connection signal="pressed" from="Panel/Bar/VBoxContainer/Button2" to="." method="_on_button2_pressed"]
+[connection signal="pressed" from="Panel/Bar/VBoxContainer/Button3" to="." method="_on_button3_pressed"]
+[connection signal="pressed" from="Panel/Bar/VBoxContainer/Button4" to="." method="_on_button4_pressed"]
+[connection signal="pressed" from="Panel/Bar/VBoxContainer/Button5" to="." method="_on_button5_pressed"]
+[connection signal="pressed" from="Panel/Bar/VBoxContainer/Button6" to="." method="_on_button6_pressed"]

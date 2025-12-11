@@ -73,42 +73,42 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_f1cr5")
 theme_override_font_sizes/font_size = 17
-text = "hi??"
+text = "one…"
 alignment = 0
 
 [node name="Button2" type="Button" parent="Panel/Bar/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_f1cr5")
 theme_override_font_sizes/font_size = 17
-text = "note #2"
+text = "two…"
 alignment = 0
 
 [node name="Button3" type="Button" parent="Panel/Bar/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_f1cr5")
 theme_override_font_sizes/font_size = 17
-text = "hi??"
+text = "thr…"
 alignment = 0
 
 [node name="Button4" type="Button" parent="Panel/Bar/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_f1cr5")
 theme_override_font_sizes/font_size = 17
-text = "hi??"
+text = "fou…"
 alignment = 0
 
 [node name="Button5" type="Button" parent="Panel/Bar/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_f1cr5")
 theme_override_font_sizes/font_size = 17
-text = "hi??"
+text = "fiv…"
 alignment = 0
 
 [node name="Button6" type="Button" parent="Panel/Bar/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_f1cr5")
 theme_override_font_sizes/font_size = 17
-text = "hi??"
+text = "six…"
 alignment = 0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Panel/Bar"]
@@ -120,7 +120,7 @@ layout_mode = 2
 theme = SubResource("Theme_4vd1n")
 theme_override_colors/font_color = Color(0.60784316, 0.7372549, 0.05882353, 1)
 text = "
-title          "
+"
 horizontal_alignment = 2
 vertical_alignment = 2
 
@@ -141,7 +141,7 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.60784316, 0.7372549, 0.05882353, 1)
 theme_override_font_sizes/font_size = 13
-text = "date   "
+text = "- - -"
 horizontal_alignment = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel/Bar/VBoxContainer2/Panel/HBoxContainer"]
@@ -154,11 +154,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource("Theme_cv8km")
 bbcode_enabled = true
-text = "jbjhbnjn
-j"
+text = "<-- Click on these buttons to display different entries"
 fit_content = true
 scroll_active = false
 
+[connection signal="close_requested" from="." to="." method="_on_NOTES_close_requested"]
 [connection signal="pressed" from="Panel/Bar/VBoxContainer/Button1" to="." method="_on_button1_pressed"]
 [connection signal="pressed" from="Panel/Bar/VBoxContainer/Button2" to="." method="_on_button2_pressed"]
 [connection signal="pressed" from="Panel/Bar/VBoxContainer/Button3" to="." method="_on_button3_pressed"]

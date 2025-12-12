@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqgl40wynkvum"
-path="res://.godot/imported/ICON-NOTE-OUTLINE.png-266d8fa73a863d0817169196e776d193.ctex"
+path="res://.godot/imported/NOTES-ICON-OUTLINE.png-a3768c8ebb6f719502eea9c66e884320.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://★ Files ★/★ Images ★/ICON-NOTE-OUTLINE.png"
-dest_files=["res://.godot/imported/ICON-NOTE-OUTLINE.png-266d8fa73a863d0817169196e776d193.ctex"]
+source_file="res://★ Files ★/★ Images ★/NOTES-ICON-OUTLINE.png"
+dest_files=["res://.godot/imported/NOTES-ICON-OUTLINE.png-a3768c8ebb6f719502eea9c66e884320.ctex"]
 
 [params]
 

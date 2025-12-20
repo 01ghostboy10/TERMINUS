@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://r52l6fqy06yx"]
+[gd_scene load_steps=6 format=3 uid="uid://r52l6fqy06yx"]
 
 [ext_resource type="Script" uid="uid://dy50cgluxjsiu" path="res://★ Scenes ★/lockscreen.gd" id="1_juwbm"]
 [ext_resource type="Texture2D" uid="uid://cfbkytsipfctj" path="res://★ Files ★/★ Images ★/Wallpaper.png" id="1_tj208"]
 [ext_resource type="Texture2D" uid="uid://beyg6x6tn7j00" path="res://★ Files ★/★ Images ★/shiba-star.png" id="2_cpucc"]
 [ext_resource type="FontFile" uid="uid://cu3ebes5jtte8" path="res://★ Files ★/★ Fonts ★/easvhs.ttf" id="3_cpucc"]
+
+[sub_resource type="Theme" id="Theme_juwbm"]
+default_font = ExtResource("3_cpucc")
 
 [node name="Lockscreen" type="Control"]
 layout_mode = 3
@@ -41,6 +44,15 @@ theme_override_colors/font_color = Color(0.70983016, 0.88311064, 0.73866194, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.6)
 theme_override_fonts/font = ExtResource("3_cpucc")
 theme_override_font_sizes/font_size = 17
-placeholder_text = "dsdsdsdsds"
+placeholder_text = "password"
 secret = true
 secret_character = "*"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 145.0
+offset_right = 1116.0
+offset_bottom = 168.0
+theme = SubResource("Theme_juwbm")
+text = "(hint: the password is 'qwertyuiop' for now because the game is in development.)"

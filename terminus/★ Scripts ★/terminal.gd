@@ -6,3 +6,4 @@ func _on_terminal_close_requested() -> void:
 
 func _on_TERMINAL_pressed() -> void:
 	visible = true
+@onready var input := $TextEdit

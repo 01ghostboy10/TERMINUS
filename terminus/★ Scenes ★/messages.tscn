@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://vtuwavjaku7o"]
+[gd_scene load_steps=17 format=3 uid="uid://vtuwavjaku7o"]
 
 [ext_resource type="FontFile" uid="uid://cu3ebes5jtte8" path="res://★ Files ★/★ Fonts ★/easvhs.ttf" id="1_3ryei"]
 [ext_resource type="Script" uid="uid://2h0tyg2r8h1a" path="res://★ Scripts ★/messages.gd" id="2_ge0cd"]
 [ext_resource type="Texture2D" uid="uid://beyg6x6tn7j00" path="res://★ Files ★/★ Images ★/shiba-star.png" id="3_ge0cd"]
 [ext_resource type="FontFile" uid="uid://dfbtv28p3cspu" path="res://★ Files ★/★ Fonts ★/EpilepsySans.ttf" id="4_wrgkd"]
+[ext_resource type="Texture2D" uid="uid://chsa7lx4f87ih" path="res://★ Files ★/★ Images ★/palu-pfp.png" id="5_rlxar"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wrgkd"]
 
@@ -16,12 +17,27 @@ bg_color = Color(0, 0, 0, 1)
 default_font = ExtResource("1_3ryei")
 default_font_size = 17
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_wrgkd"]
+color = Color(0.65841234, 0.772297, 0.7067778, 1)
+
+[sub_resource type="Theme" id="Theme_86b7h"]
+default_font = ExtResource("1_3ryei")
+default_font_size = 20
+
 [sub_resource type="Theme" id="Theme_wrgkd"]
 default_font = ExtResource("1_3ryei")
 default_font_size = 14
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlxar"]
 bg_color = Color(0.19215687, 0.38431373, 0.19215687, 1)
+
+[sub_resource type="Theme" id="Theme_1yhso"]
+default_font = ExtResource("1_3ryei")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uxr7d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8gak"]
+bg_color = Color(0.23759669, 0.41664186, 0.16602564, 1)
 
 [node name="messages" type="Window"]
 oversampling_override = 1.0
@@ -66,35 +82,35 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Contact" type="Button" parent="Panel/VBoxContainer/ScrollContainer/contact_list"]
+[node name="Contact1" type="Button" parent="Panel/VBoxContainer/ScrollContainer/contact_list"]
 custom_minimum_size = Vector2(165, 70)
 layout_mode = 2
 
-[node name="vbox" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact"]
+[node name="vbox" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact1"]
 custom_minimum_size = Vector2(0, 45)
 layout_mode = 0
 offset_right = 168.0
 offset_bottom = 61.0
-theme_override_constants/separation = -1
+theme_override_constants/separation = 2
 
-[node name="hbox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact/vbox"]
+[node name="hbox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact1/vbox"]
 custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="pfp" type="TextureRect" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact/vbox/hbox"]
+[node name="pfp" type="TextureRect" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact1/vbox/hbox"]
 layout_mode = 2
 texture = ExtResource("3_ge0cd")
 expand_mode = 3
 
-[node name="name" type="Label" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact/vbox/hbox"]
+[node name="name" type="Label" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact1/vbox/hbox"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme = SubResource("Theme_rlxar")
 text = "Someone"
 vertical_alignment = 2
 
-[node name="description" type="Label" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact/vbox"]
+[node name="description" type="Label" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact1/vbox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_wrgkd")
 theme_override_font_sizes/font_size = 12
@@ -109,7 +125,7 @@ custom_minimum_size = Vector2(0, 45)
 layout_mode = 0
 offset_right = 168.0
 offset_bottom = 61.0
-theme_override_constants/separation = -1
+theme_override_constants/separation = 2
 
 [node name="hbox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact2/vbox"]
 custom_minimum_size = Vector2(0, 45)
@@ -118,21 +134,21 @@ size_flags_vertical = 3
 
 [node name="pfp" type="TextureRect" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact2/vbox/hbox"]
 layout_mode = 2
-texture = ExtResource("3_ge0cd")
+texture = ExtResource("5_rlxar")
 expand_mode = 3
 
 [node name="name" type="Label" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact2/vbox/hbox"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme = SubResource("Theme_rlxar")
-text = "Slackbot"
+text = "paluuu_v"
 vertical_alignment = 2
 
 [node name="description" type="Label" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact2/vbox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_wrgkd")
 theme_override_font_sizes/font_size = 12
-text = " unnecessary pings :)"
+text = "purple is the BEST argue w/ the wall"
 
 [node name="Contact3" type="Button" parent="Panel/VBoxContainer/ScrollContainer/contact_list"]
 custom_minimum_size = Vector2(165, 70)
@@ -143,7 +159,7 @@ custom_minimum_size = Vector2(0, 45)
 layout_mode = 0
 offset_right = 168.0
 offset_bottom = 61.0
-theme_override_constants/separation = -1
+theme_override_constants/separation = 2
 
 [node name="hbox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact3/vbox"]
 custom_minimum_size = Vector2(0, 45)
@@ -177,7 +193,7 @@ custom_minimum_size = Vector2(0, 45)
 layout_mode = 0
 offset_right = 168.0
 offset_bottom = 61.0
-theme_override_constants/separation = -1
+theme_override_constants/separation = 2
 
 [node name="hbox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact4/vbox"]
 custom_minimum_size = Vector2(0, 45)
@@ -211,7 +227,7 @@ custom_minimum_size = Vector2(0, 45)
 layout_mode = 0
 offset_right = 168.0
 offset_bottom = 61.0
-theme_override_constants/separation = -1
+theme_override_constants/separation = 2
 
 [node name="hbox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact5/vbox"]
 custom_minimum_size = Vector2(0, 45)
@@ -245,7 +261,7 @@ custom_minimum_size = Vector2(0, 45)
 layout_mode = 0
 offset_right = 168.0
 offset_bottom = 61.0
-theme_override_constants/separation = -1
+theme_override_constants/separation = 2
 
 [node name="hbox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact6/vbox"]
 custom_minimum_size = Vector2(0, 45)
@@ -279,7 +295,7 @@ custom_minimum_size = Vector2(0, 45)
 layout_mode = 0
 offset_right = 168.0
 offset_bottom = 61.0
-theme_override_constants/separation = -1
+theme_override_constants/separation = 2
 
 [node name="hbox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/contact_list/Contact7/vbox"]
 custom_minimum_size = Vector2(0, 45)
@@ -313,14 +329,28 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(0, 340)
 layout_mode = 2
 
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/message_display/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxLine_wrgkd")
+
 [node name="Name" type="RichTextLabel" parent="Panel/VBoxContainer/message_display/VBoxContainer"]
 custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
+theme = SubResource("Theme_86b7h")
+theme_override_constants/line_separation = 10
+theme_override_constants/paragraph_separation = 10
 
-[node name="content" type="RichTextLabel" parent="Panel/VBoxContainer/message_display/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/message_display/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 17
+
+[node name="content" type="RichTextLabel" parent="Panel/VBoxContainer/message_display/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_wrgkd")
+theme_override_constants/line_separation = 5
 theme_override_constants/paragraph_separation = 7
 bbcode_enabled = true
 text = "Thomas: In life we are always learning! :)
@@ -328,13 +358,40 @@ You: nooooo
 uiii"
 vertical_alignment = 2
 
-[node name="choices" type="HBoxContainer" parent="Panel/VBoxContainer/message_display"]
-custom_minimum_size = Vector2(0, 65)
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="Panel/VBoxContainer/message_display/choices"]
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/message_display"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_rlxar")
 
+[node name="choices" type="VBoxContainer" parent="Panel/VBoxContainer/message_display/Panel"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 0
+offset_top = 4.0
+offset_right = 349.0
+offset_bottom = 69.0
+
+[node name="Button1" type="Button" parent="Panel/VBoxContainer/message_display/Panel/choices"]
+layout_mode = 2
+theme = SubResource("Theme_1yhso")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uxr7d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8gak")
+text = "dsds"
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer/message_display/Panel/choices"]
+layout_mode = 2
+theme = SubResource("Theme_1yhso")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uxr7d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8gak")
+text = "dsdsds"
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer/message_display/Panel/choices"]
+layout_mode = 2
+theme = SubResource("Theme_1yhso")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uxr7d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8gak")
+text = "dsdsds"
+
 [connection signal="close_requested" from="." to="." method="_on_messages_close_requested"]
+[connection signal="pressed" from="Panel/VBoxContainer/ScrollContainer/contact_list/Contact1" to="." method="_on_contact1_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/ScrollContainer/contact_list/Contact2" to="." method="_on_contact2_pressed"]

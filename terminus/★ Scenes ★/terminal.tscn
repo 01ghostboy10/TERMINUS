@@ -63,15 +63,17 @@ NAME@HackBook-Air ~ %"
 label_settings = SubResource("LabelSettings_t4jse")
 autowrap_mode = 1
 
-[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer"]
+[node name="TextEdit" type="LineEdit" parent="Panel/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_x3cye")
 theme_override_font_sizes/font_size = 8
 placeholder_text = "ENTER A COMMAND~"
 context_menu_enabled = false
 shortcut_keys_enabled = false
-caret_type = 1
 caret_blink = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [connection signal="close_requested" from="." to="." method="_on_terminal_close_requested"]

@@ -1,5 +1,8 @@
 extends Control
 
+func _ready():
+	$"archivists-icon".visible = false
+
 func _process(_delta):
 	#TIME!
 	$Bar/Time.text = Time.get_time_string_from_system()
@@ -14,5 +17,11 @@ func _process(_delta):
 
 func _input(event):
 		#keyboard noises
+	
+
 	if event is InputEventKey and event.pressed and not event.echo:
 		$keyboard_noises.play()
+	
+	
+	if Input.is_action_just_pressed("Left_Mouse"):
+		$mouse.play()

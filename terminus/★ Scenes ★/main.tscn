@@ -1,19 +1,27 @@
-[gd_scene load_steps=18 format=3 uid="uid://cf0aarbbrff5x"]
+[gd_scene load_steps=32 format=3 uid="uid://cf0aarbbrff5x"]
 
 [ext_resource type="Texture2D" uid="uid://cfbkytsipfctj" path="res://★ Files ★/★ Images ★/Wallpaper.png" id="1_0g0ev"]
 [ext_resource type="Script" uid="uid://dl5hts6nabli6" path="res://★ Scripts ★/main.gd" id="1_ms1t0"]
 [ext_resource type="PackedScene" uid="uid://hhddolawglrm" path="res://★ Scenes ★/notes.tscn" id="2_wg7bt"]
 [ext_resource type="Texture2D" uid="uid://wkwu1f7rioov" path="res://★ Files ★/★ Images ★/NOTES-ICON.png" id="3_xtgqh"]
 [ext_resource type="PackedScene" uid="uid://cvj3poxsk6yjc" path="res://★ Scenes ★/terminal.tscn" id="4_ocyab"]
+[ext_resource type="AudioStream" uid="uid://bey6pepgfi8jy" path="res://★ Files ★/★ Sounds ★/creepy.wav" id="4_pq2ts"]
 [ext_resource type="Texture2D" uid="uid://dqgl40wynkvum" path="res://★ Files ★/★ Images ★/NOTES-ICON-OUTLINE.png" id="4_xmn2q"]
+[ext_resource type="AudioStream" uid="uid://dlj5gmxv3575w" path="res://★ Files ★/★ Sounds ★/close:noise.wav" id="5_3a7o5"]
 [ext_resource type="PackedScene" uid="uid://vtuwavjaku7o" path="res://★ Scenes ★/messages.tscn" id="5_8sq8x"]
+[ext_resource type="PackedScene" uid="uid://dwm3r8hjrglgc" path="res://★ Scenes ★/archivists.tscn" id="5_ksmfe"]
+[ext_resource type="AudioStream" uid="uid://56n7fftseg3y" path="res://★ Files ★/★ Sounds ★/error:noise.wav" id="6_2e2qt"]
 [ext_resource type="FontFile" uid="uid://cu3ebes5jtte8" path="res://★ Files ★/★ Fonts ★/easvhs.ttf" id="6_upfbo"]
 [ext_resource type="Texture2D" uid="uid://cygf15b6r44jt" path="res://★ Files ★/★ Images ★/TERMINAL-ICON.png" id="7_f6x6g"]
+[ext_resource type="AudioStream" uid="uid://bj1o6701k5a3a" path="res://★ Files ★/★ Sounds ★/mouse.wav" id="7_kq8ld"]
 [ext_resource type="Texture2D" uid="uid://cb0dvloxptvjw" path="res://★ Files ★/★ Images ★/TERMINAL-ICON-OUTLINE.png" id="8_tnhrd"]
 [ext_resource type="Texture2D" uid="uid://ngo5c3a340s2" path="res://★ Files ★/★ Images ★/MESSAGES-ICON.png" id="9_713c3"]
 [ext_resource type="Texture2D" uid="uid://d2xmeftpuxnqx" path="res://★ Files ★/★ Images ★/MESSAGES-ICON-OUTLINE.png" id="10_j3xoj"]
 [ext_resource type="AudioStream" uid="uid://86g1tr8bew7p" path="res://★ Files ★/★ Sounds ★/click1.wav" id="13_fax7y"]
+[ext_resource type="Texture2D" uid="uid://t3x44obfm27i" path="res://★ Files ★/★ Images ★/eyeone.png" id="14_dfaut"]
 [ext_resource type="AudioStream" uid="uid://bd560ymmpptl6" path="res://★ Files ★/★ Sounds ★/click2.wav" id="14_gmcmp"]
+[ext_resource type="Texture2D" uid="uid://cqcplb2cvruuk" path="res://★ Files ★/★ Images ★/eyehover2.png" id="15_dfaut"]
+[ext_resource type="Texture2D" uid="uid://cn7hxp3y66jrk" path="res://★ Files ★/★ Images ★/notiff.png" id="21_cprxh"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dfaut"]
 streams_count = 2
@@ -25,7 +33,55 @@ default_font = ExtResource("6_upfbo")
 
 [sub_resource type="Theme" id="Theme_8sq8x"]
 default_font = ExtResource("6_upfbo")
-default_font_size = 20
+default_font_size = 7
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kq8ld"]
+texture = ExtResource("21_cprxh")
+
+[sub_resource type="Theme" id="Theme_heclf"]
+default_font = ExtResource("6_upfbo")
+default_font_size = 14
+
+[sub_resource type="Theme" id="Theme_2k72w"]
+default_font = ExtResource("6_upfbo")
+default_font_size = 8
+
+[sub_resource type="Animation" id="Animation_gqlmo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1159, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_d3mpj"]
+resource_name = "move"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1159, 2), Vector2(970, 2), Vector2(970, 2), Vector2(1159, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xith2"]
+_data = {
+&"RESET": SubResource("Animation_gqlmo"),
+&"move": SubResource("Animation_d3mpj")
+}
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -40,6 +96,22 @@ script = ExtResource("1_ms1t0")
 [node name="keyboard_noises" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_dfaut")
 
+[node name="archiv-noises" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pq2ts")
+volume_db = -15.0
+
+[node name="closewindow" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_3a7o5")
+volume_db = -15.0
+
+[node name="error" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2e2qt")
+volume_db = -15.0
+
+[node name="mouse" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_kq8ld")
+volume_db = -15.0
+
 [node name="Wallpaper" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -50,6 +122,8 @@ grow_vertical = 2
 texture = ExtResource("1_0g0ev")
 expand_mode = 2
 
+[node name="Archivists" parent="." instance=ExtResource("5_ksmfe")]
+
 [node name="Notes" parent="." instance=ExtResource("2_wg7bt")]
 
 [node name="Terminal" parent="." instance=ExtResource("4_ocyab")]
@@ -58,33 +132,43 @@ expand_mode = 2
 
 [node name="notes-icon" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 35.0
-offset_top = 37.0
-offset_right = 203.0
-offset_bottom = 205.0
+offset_left = 60.0
+offset_top = 59.0
+offset_right = 228.0
+offset_bottom = 227.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("3_xtgqh")
 texture_hover = ExtResource("4_xmn2q")
 
 [node name="terminal-icon" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 166.0
-offset_right = 205.0
-offset_bottom = 334.0
+offset_left = 62.0
+offset_top = 188.0
+offset_right = 230.0
+offset_bottom = 356.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("7_f6x6g")
 texture_hover = ExtResource("8_tnhrd")
 
 [node name="messages-icon" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 292.0
-offset_right = 205.0
-offset_bottom = 460.0
+offset_left = 62.0
+offset_top = 314.0
+offset_right = 230.0
+offset_bottom = 482.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("9_713c3")
 texture_hover = ExtResource("10_j3xoj")
+
+[node name="archivists-icon" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 984.0
+offset_top = 48.999996
+offset_right = 1152.0
+offset_bottom = 217.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("14_dfaut")
+texture_hover = ExtResource("15_dfaut")
 
 [node name="Bar" type="ColorRect" parent="."]
 layout_mode = 1
@@ -99,11 +183,11 @@ grow_vertical = 0
 
 [node name="ColorRect" type="ColorRect" parent="Bar"]
 layout_mode = 0
-offset_left = 1069.0
+offset_left = 1075.0
 offset_top = 5.0
-offset_right = 1109.0
+offset_right = 1115.0
 offset_bottom = 45.0
-scale = Vector2(2.000019, 0.8745093)
+scale = Vector2(1.7124587, 0.8745093)
 color = Color(0, 0, 0, 1)
 
 [node name="Time" type="Label" parent="Bar"]
@@ -146,7 +230,51 @@ offset_bottom = 35.0
 theme = SubResource("Theme_8sq8x")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "made by @onlyth3best"
+vertical_alignment = 1
+
+[node name="notification" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1159.0
+offset_top = 2.0
+offset_right = 1309.0
+offset_bottom = 72.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_kq8ld")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="notification"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="notification/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="notification/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="notification/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="notif" type="Label" parent="notification/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_heclf")
+text = "! NEW NOTIFICATION !"
+horizontal_alignment = 1
+
+[node name="text" type="Label" parent="notification/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_2k72w")
+autowrap_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="notification"]
+libraries = {
+&"": SubResource("AnimationLibrary_xith2")
+}
 
 [connection signal="pressed" from="notes-icon" to="Notes" method="_on_notes_pressed"]
 [connection signal="pressed" from="terminal-icon" to="Terminal" method="_on_TERMINAL_pressed"]
 [connection signal="pressed" from="messages-icon" to="Messages" method="_on_messagesicon_pressed"]
+[connection signal="pressed" from="archivists-icon" to="Archivists" method="_on_archivistsicon_pressed"]

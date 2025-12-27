@@ -3,6 +3,7 @@ extends Window
 
 func _on_messages_close_requested() -> void:
 	visible = false
+	$"../closewindow".play()
 	
 func _on_messagesicon_pressed() -> void:
 	visible = true
@@ -10,9 +11,16 @@ func _on_messagesicon_pressed() -> void:
 #sdjskdjskjdkjkj
 
 func _on_contact1_pressed() -> void:
-	get_node("Panel/VBoxContainer/message_display/VBoxContainer/Name").text = str("T")
-	get_node("Panel/VBoxContainer/message_display/VBoxContainer/MarginContainer/content").text = str("[color=#DB7900] T:[/color] In life we are always learning… [br] [color=(#afd5d9)] You:[/color] Helloo [br]")
+	get_node("Panel/VBoxContainer/message_display/VBoxContainer/Name").text = str("Hello!")
+	get_node("Panel/VBoxContainer/message_display/VBoxContainer/MarginContainer/content").text = str("""
+onlyth3best: Hello, player!
 
+onlyth3best: For now, the entirety of the game isn't completed yet. I'll be posting updates here and there, though!
+
+onlyth3best: If you're stuck, here are some things you could try…
+
+onlyth3best: …look through the notes for Terminal commands. try finding some files to open…
+""")
 
 func _on_contact2_pressed() -> void:
 	get_node("Panel/VBoxContainer/message_display/VBoxContainer/Name").text = str("paluuu_v")
@@ -62,8 +70,9 @@ func _on_contact2_pressed() -> void:
 
 [color=#9ba87e]you [color=#c0c0c0]at 15:27:[/color][/color] okay this is random but do you remember someone on the server yesterday with the alphanumeric user
 [color=#9ba87e]you:[/color] the one that began with k
+[color=#9ba87e]you:[/color] was he an admin??
 [color=#ee4bfb]paluuu_v:[/color] uh maybe
-[color=#ee4bfb]paluuu_v:[/color] idk, I wasn't really paying attention to others' usernames lol
+[color=#ee4bfb]paluuu_v:[/color] idk, I wasn't really paying attention to others yesterday lol
 [color=#9ba87e]you:[/color] no worries
 							[color=#c0c0c0] paluuu_v is offline [/color]
 """)
@@ -78,7 +87,7 @@ func _on_contact3_pressed() -> void:
 [color=#3588fc]m6kj1rp:[/color] I'm assuming Palu didn't tell you–
 [color=#3588fc]m6kj1rp:[/color] I asked her for your contact, mostly because I was just curious…
 [color=#9ba87e]you:[/color] About what??
-[color=#3588fc]m6kj1rp:[/color] She told me you got into the Otherworld, finally.
+[color=#3588fc]m6kj1rp:[/color] She told me you got into the Archivist server, finally.
 [color=#3588fc]m6kj1rp:[/color] What do you think of it?
 [color=#9ba87e]you:[/color] what do you mean? It's okay, I guess
 [color=#9ba87e]you:[/color] Slightly underwhelming lol but nothing too weird
@@ -101,13 +110,54 @@ func _on_contact3_pressed() -> void:
 """)
 
 func _on_contact4_pressed() -> void:
-	get_node("Panel/VBoxContainer/message_display/VBoxContainer/Name").text = str("OTHERWORLD HELPBOT")
+	get_node("Panel/VBoxContainer/message_display/VBoxContainer/Name").text = str("ARCHIVISTS HELPBOT")
 	get_node("Panel/VBoxContainer/message_display/VBoxContainer/MarginContainer/content").text = str("""
-[color=#3588fc]m6kj1rp:[/color] Hello, you're [hint="{*******}"]{REDACTED}[/hint]
-[color=#9ba87e]you:[/color] Hi, m6kj1rp 
-[color=#eb061a]HELPBOT:[/color] how did you get my contact??
+[color=#c0c0c0]────────────13/08/2011[/color]
+[color=#9ba87e]you [color=#c0c0c0]at 15:20:[/color][/color] Hi, can I ask a question
+[color=#eb061a]HELPBOT:[/color] Greetings, user [hint="{*******}"]{REDACTED}[/hint].
+[color=#eb061a]HELPBOT:[/color] Command unrecognised. Type "/help" to see a list of commands, or type "/connect" to be connected with a living operator.
+[color=#9ba87e]you:[/color] /help
+[color=#eb061a]HELPBOT:[/color] List of commands:
+	/about		display information on the OTHERWORLD
+	/admin		check admin register on your server
+	/ban			permanently ban a user from your server (/ban, user)
+	/bardown		decrease the bargain price on your offers (/bardown, offerNum, amt)
+	/barkill 	revoke a bargain offer (/barkill, offerNum)
+	/barrevive	revive a bargain offer (/barrevive, offerNum)
+	/barup		increase the bargain price on your offers (/barkill, offerNum, amt)
+	/connect		connect with a live operator
+	/kick		kick a user from your server (/kick, user)
+	/log			view a log of actions performed in your server, in the past 24 hours
+	/uindex		display a list of currently online users in the OTHERWORLD
+	/user		display information about your user in the OTHERWORLD
+	/ver			check the OTHERWORLD version currently running on your server
+	[color=#9ba87e]you:[/color] /uindex
+[color=#eb061a]HELPBOT:[/color] List of currently online users in your server, {blackberry}:
+	USER			STATUS		DURATION
+	k3dh5ih		/idle/		02:38:20
+	m6kj1rp		/idle/		00:14:39
+[color=#9ba87e]you:[/color] /kick k3dh5ih
+[color=#eb061a]HELPBOT:[/color] The user k3dh5ih has been kicked from your server.
+[color=#9ba87e]you:[/color] /log
+[color=#eb061a]HELPBOT:[/color] Log of actions today in your server:
+NOTE: /0 or /1 after an attempted action displays the outcome (/0 = failed, /1 = passed)
+	[13:32] user k3dh5ih connected to your server {blackberry}
+	[13:47] user k3dh5ih attempted to edit a bargain price /0
+	[15:06] user m6kj1rp connected to your server {blackberry}
+	[15:07] user k3dh5ih attempted to kick user m6kj1rp /0
+	[15:08] user m6kj1rp attempted to kick user k3dh5ih /1
+	[15:11] user m6kj1rp attempted to edit admin protocol /1
+	[15:12] user k3dh5ih connected to your server {blackberry}
+	[15:20] YOU attempted to ban user k3dh5ih /1
+	[15:20] user m6kj1rp attempted to ban user k3dh5ih /0
 """)
 
+#add this
+func _on_contact5_pressed() -> void:
+	get_node("Panel/VBoxContainer/message_display/VBoxContainer/Name").text = str("AHSJHDJSHDJS")
+	get_node("Panel/VBoxContainer/message_display/VBoxContainer/MarginContainer/content").text = str("""
+
+""")
 
 #try for hints
 # #eb061a BRIGHT RED
@@ -122,7 +172,22 @@ func _on_contact4_pressed() -> void:
 #vvhvh########### b,hgv,gg,,gghv,gvkvhgvvkhgvkhvkjgvkgvkgghvkhgvkhgvhgvhgvhghvhvhgvgv
 #lev is
 #lev@is-@!
-#
+#dfkkkpokopokopokopopkopokopkpopokpkjkkjjkkjkljkjkjklkjljlkjlljklk
+#kj
+#ljjkklkjkjl
 #screams in frustration:
 #like this
 #AaaaaAAAAaaaAAAaaajdhjshdjshdjhjh293h83j8dj98J938j98jd938j#(*JF(*J(*#FJ(*8eifjf
+#
+
+
+func _on_contact7_pressed() -> void:
+	get_node("Panel/VBoxContainer/message_display/VBoxContainer/Name").text = str("KOIIIIIII")
+	get_node("Panel/VBoxContainer/message_display/VBoxContainer/MarginContainer/content").text = str("""
+[color=#c0c0c0]────────────11/03/2011[/color]
+
+[color=#ffb523]KOIIIIIII:[/color] Heyyyyyyy, idk how are you.......
+[color=#9ba87e]you:[/color] how did you get my contact??
+[color=#ffb523]mia:[/color] Hi, m6kj1rp 
+[color=#ffb523]you:[/color] Whattt????
+""")

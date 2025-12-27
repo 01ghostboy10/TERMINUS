@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://r52l6fqy06yx"]
+[gd_scene load_steps=10 format=3 uid="uid://r52l6fqy06yx"]
 
-[ext_resource type="Script" uid="uid://dy50cgluxjsiu" path="res://★ Scenes ★/lockscreen.gd" id="1_juwbm"]
+[ext_resource type="Script" uid="uid://dy50cgluxjsiu" path="res://★ Scripts ★/lockscreen.gd" id="1_juwbm"]
 [ext_resource type="Texture2D" uid="uid://cfbkytsipfctj" path="res://★ Files ★/★ Images ★/Wallpaper.png" id="1_tj208"]
 [ext_resource type="Texture2D" uid="uid://beyg6x6tn7j00" path="res://★ Files ★/★ Images ★/shiba-star.png" id="2_cpucc"]
 [ext_resource type="FontFile" uid="uid://cu3ebes5jtte8" path="res://★ Files ★/★ Fonts ★/easvhs.ttf" id="3_cpucc"]
 [ext_resource type="AudioStream" uid="uid://86g1tr8bew7p" path="res://★ Files ★/★ Sounds ★/click1.wav" id="5_us5vg"]
 [ext_resource type="AudioStream" uid="uid://bd560ymmpptl6" path="res://★ Files ★/★ Sounds ★/click2.wav" id="6_rbthb"]
+[ext_resource type="AudioStream" uid="uid://56n7fftseg3y" path="res://★ Files ★/★ Sounds ★/error:noise.wav" id="7_rbthb"]
 
 [sub_resource type="Theme" id="Theme_juwbm"]
 default_font = ExtResource("3_cpucc")
@@ -70,3 +71,7 @@ stream = SubResource("AudioStreamRandomizer_7wps3")
 
 [node name="keyboard_noises" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_7wps3")
+
+[node name="error" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_rbthb")
+volume_db = -15.0
